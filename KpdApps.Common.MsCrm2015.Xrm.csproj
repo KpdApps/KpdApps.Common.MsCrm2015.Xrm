@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>kpdapps.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="KpdApps.Common.MsCrm2015, Version=1.0.68.0, Culture=neutral, PublicKeyToken=a51df055edad86d6, processorArchitecture=MSIL">
       <HintPath>packages\KpdApps.Common.MsCrm2015.1.0.68\lib\net452\KpdApps.Common.MsCrm2015.dll</HintPath>
@@ -61,10 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Plugins\AutoNamingPlugin.cs" />
+    <Compile Include="Plugins\AutogeneratingBasePlugin.cs" />
+    <Compile Include="Plugins\AutonamingPlugin.cs" />
+    <Compile Include="Plugins\AutonumberingPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\Autonumbering.cs" />
+    <Compile Include="Schema\Autonaming.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="kpdapps.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

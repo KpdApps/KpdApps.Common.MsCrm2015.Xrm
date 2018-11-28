@@ -52,7 +52,7 @@ namespace KpdApps.Common.MsCrm2015.Xrm.Plugins
         {
             string fieldAddress = resultMatch;
 
-            var value = CrmFieldHelper.GetFieldValueByFieldAddress(TargetEntity, fieldAddress, Service);
+            object value = CrmFieldHelper.GetFieldValueByFieldAddress(TargetEntity, fieldAddress, Service);
 
             return value.ToString();
         }

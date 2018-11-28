@@ -37,8 +37,8 @@
     <AssemblyOriginatorKeyFile>kpdapps.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KpdApps.Common.MsCrm2015, Version=1.0.68.0, Culture=neutral, PublicKeyToken=a51df055edad86d6, processorArchitecture=MSIL">
-      <HintPath>packages\KpdApps.Common.MsCrm2015.1.0.68\lib\net452\KpdApps.Common.MsCrm2015.dll</HintPath>
+    <Reference Include="KpdApps.Common.MsCrm2015, Version=1.0.84.0, Culture=neutral, PublicKeyToken=a51df055edad86d6, processorArchitecture=MSIL">
+      <HintPath>packages\KpdApps.Common.MsCrm2015.1.0.84\lib\net452\KpdApps.Common.MsCrm2015.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CrmSdk.CoreAssemblies.7.1.1\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
@@ -79,4 +79,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>TIME /T</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -62,6 +62,9 @@ namespace KpdApps.Common.MsCrm2015.Xrm.Plugins
             return resultString;
         }
 
+        /// <summary>
+        /// Функцию надо вызывать в конструкторе плагина.
+        /// </summary>
         protected void AddPredefinedFunction(string functionName, Delegate function)
         {
             predefinedFunctions.Add(functionName, function);

@@ -10,6 +10,11 @@ namespace KpdApps.Common.MsCrm2015.Xrm.Plugins
     {
         private int Counter;
 
+        public AutonumberingPlugin()
+        {
+            AddPredefinedFunction("number", new Func<string, string>(PredefinedFunctionGetCounterString));
+        }
+
         public override void ExecuteInternal(PluginState state)
         {
             InitTargetAndService(state);
@@ -17,8 +22,6 @@ namespace KpdApps.Common.MsCrm2015.Xrm.Plugins
 
             if (autonumbering == null)
                 return;
-
-            AddPredefinedFunction("number", new Func<string, string>(PredefinedFunctionGetCounterString));
 
             string mask = autonumbering.Attributes.GetStringValue(Schema.Autonumbering.Mask);
             Counter = autonumbering.Attributes.GetNumberValue(Schema.Autonumbering.Counter);
